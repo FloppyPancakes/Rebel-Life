@@ -308,8 +308,6 @@ switch (_shop) do
 		{
 			_return set[count _return,
 			["B_Heli_Transport_01_F",200000]];
-			_return set[count _return,
-			["B_MRAP_01_hmg_F",750000]];
 		};
 	};
 

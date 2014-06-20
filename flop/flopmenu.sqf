@@ -14,6 +14,7 @@ debug = {
 	player addAction ["<t color=""#FF0000"">" + "Call VAS" + "</t>",{[] execVM "VAS\open.sqf"}];
 	player addAction ["Black Out Target",{_vic = cursorTarget; if (isNull _vic) then {_vic = player;}; _vic setObjectTexture [0,'#(argb,8,8,3)color(0,0,0,0)']}];
 	player addAction ["Light Me",{call lightme}];
+	player addAction ["<t color='#DBA901'>VG Straight Wall</t>", "flop\VGStraightWalls.sqf",(["Land_CncWall4_F",4,-0.5,0])];
 	player addAction ["Return to Main",{removeAllActions player; call flpmain}];
 };
 

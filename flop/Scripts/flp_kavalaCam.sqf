@@ -11,29 +11,29 @@ titlecut [" ","BLACK IN",2];
 flp_cam = "1";
 
 while {flp_cam == "1"} do {
-    flpcam camsetrelpos [-45,0,20];
-flpcam camcommit 30;
+flpcam camsetrelpos [-45,0,20];
+flpcam camcommit 60;
 camcommitted flpcam;
 
-sleep 30;
+sleep 60;
 
-flpcam camsetrelpos [0,45,30];
-flpcam camcommit 30;
+flpcam camsetrelpos [0,45,20];
+flpcam camcommit 60;
 camcommitted flpcam;
 
-sleep 30;
+sleep 60;
 
-flpcam camsetrelpos [45,0,30];
-flpcam camcommit 30;
+flpcam camsetrelpos [45,0,20];
+flpcam camcommit 60;
 camcommitted flpcam;
 
-sleep 30;
+sleep 60;
 
-flpcam camsetrelpos [0,-45,30];
-flpcam camcommit 30;
+flpcam camsetrelpos [0,-45,20];
+flpcam camcommit 60;
 camcommitted flpcam;
 
-sleep 30;
+sleep 60;
 };
 
 
