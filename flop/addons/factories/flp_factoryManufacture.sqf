@@ -6,8 +6,9 @@
 	Main menu for factories.
 */
 
-selection = 0;//Default is First Button
+flp_factorySelection = "1";//Default is First Button
 facNum = _this select 0; //Determines which factory is being called from execVM variable.
+//0 = Weapons
 createDialog "life_factories_menu";
 
 switch (facNum) do {
@@ -45,27 +46,34 @@ switch (facNum) do {
 
 //if (!(createDialog "life_factories_menu")) exitWith {hint "Dialog Error!";}; //Speed test this vs checking for display
 
-[facNum, selection] execVM "flop\addons\factories\flp_factoryFetchItems.sqf";
+[facNum, flp_factorySelection] execVM "flop\addons\factories\flp_factoryFetchItems.sqf";
 
-buttonSetAction [1600, "selection = 0; [facNum, selection] execVM ""flop\addons\factories\flp_factoryFetchItems.sqf"";" ];
-buttonSetAction [1601, "selection = 2; [facNum, selection] execVM ""flop\addons\factories\flp_factoryFetchItems.sqf"";" ];
-buttonSetAction [1602, "selection = 1; [facNum, selection] execVM ""flop\addons\factories\flp_factoryFetchItems.sqf"";" ];
+buttonSetAction [1600, "flp_factorySelection = ""1""; [facNum, flp_factorySelection] execVM ""flop\addons\factories\flp_factoryFetchItems.sqf"";" ];
+buttonSetAction [1601, "flp_factorySelection = ""3""; [facNum, flp_factorySelection] execVM ""flop\addons\factories\flp_factoryFetchItems.sqf"";" ];
+buttonSetAction [1602, "flp_factorySelection = ""2""; [facNum, flp_factorySelection] execVM ""flop\addons\factories\flp_factoryFetchItems.sqf"";" ];
 buttonSetAction [1603, "[facnum] execVM ""flop\addons\factories\flp_factoryFetchQueue.sqf"";" ];
 
 
 sleep 0.1; // The Script conintues so fast that it gives an error. Prevent that.
 while {ctrlVisible 1500} do {
 
-	_selection = selection;
-	_facNum = _this select 0;
-	_facArray  = flp_factories select _facNum;
-	_facItems = _facArray select 5;
-	_facStorage = _facArray select 7;
-	_queue = _facArray select 8;
-	factoryAdd = (_facItems select selection) select lbCurSel 1500;
-	//Classname, price, time
-		//Create and Export Buttons only valid when on the Queue screen.
-	buttonSetAction [1605, "[factoryAdd select 1, factoryAdd select 2, factoryAdd select 3, factoryAdd select 4, factoryAdd select 0, factoryAdd select 5] execVM ""flop\addons\factories\flp_factoryCreateItem.sqf"";"];
+    //Add to Description:
+    //Weapons
+        //Name
+        //Description
+        //Picture
+
+    //Vehicles
+        //Name
+        //Description
+        //Engine Power
+        //Max Speed
+        //Armor Level
+
+    flp_selectedInfo = lbData [1500, (lbCurSel 1500)];
+
+    //buttonSetAction [1605, "[_selectedInfo, facNum] call flp_factoryCreateItem"];
+    buttonSetAction [1605, " [flp_selectedInfo, facNum] execVM ""flop\addons\factories\flp_factoryCreateItem.sqf"" "];
 
 	if (flp_queueActive == 1) then { //These buttons only valid when on the Queue screen. Will continue to call itself so the screen updates.
 	buttonSetAction [1608, " [0, lbCurSel 1500] execVM ""flop\addons\factories\flp_factorySell.sqf""; "]; //Sell
@@ -79,5 +87,5 @@ while {ctrlVisible 1500} do {
 	};
 
 
-	sleep 0.2;
+	sleep 0.1;
 };

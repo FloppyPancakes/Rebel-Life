@@ -6,27 +6,42 @@
 	Checks to make sure person has required materials for item, and cash, then adds to queue.
 */
 
-//if ((_this select 0) == "") exitWith {player vehicleChat "You need to first make a selection";};
+if ((_this select 0) == "") exitWith {player vehicleChat "You need to first make a selection";};
 
 _item		= _this select 0;
-_cost		= _this select 1;
-_time		= _this select 2;
-_type		= _this select 3;
-_name		= _this select 4;
-_subtype	= _this select 5;
+_facnum 	= _this select 1;
 
-//hint format["%1\n %2\n %3\n %4", _item, _cost, _time, _type, _name];
+switch (_facnum) do {
+    case 0: { //Weapons Factory
+		{
+			private ["_name", "_time"];
+			if((_x select 0) == _item) then {
 
-//Check Price First
-if(life_cash < _cost) exitWith {hint "You don't have enough money to create this."};
+				_cost = parseNumber(_x select 4);
+				if(life_cash < _cost) exitWith {hint "You don't have enough money to create this."};
 
-//Check for materials here.
+				if ((_x select 2) == "2") then {
+					_name = getText(configfile >> "CfgMagazines" >> _x select 0>> "displayName");
+				} else {
+					_name = getText(configfile >> "CfgWeapons" >> _x select 0>> "displayName");
+				};
+				_item = _x select 0;
+				_time = (parseNumber(_x select 4) * flp_factoryTimeCost);
+				if (_time < 60) then {
+					_time = 60;
+				};
+				_time = (_time + time);
+				_subtype = _x select 2;
 
-//Add item to Queue
-if(_type == 1) then {
+				life_cash = life_cash - _cost;
+				factoryWeaponQueue = factoryWeaponQueue + [[_name, _item, _time, _subtype, (_cost * 2)]];
+				//hint format ["NAME: %1\n CLASSNAME: %2\n FINISHTIME: %3\n SUBTYPE: %4", _name, _item, _time, _subtype];
+			};
+		} forEach (missionNameSpace getVariable "flp_weapons");
 
-	life_cash = life_cash - _cost;
-	factoryWeaponQueue = factoryWeaponQueue + [[_name, _item, ((_time * 60) + time), _subtype, (_cost * 3)]];
-	hint format["Added %1 to the queue", _name];
-	//hint format["%1", factoryWeaponQueue];
+    };
+
+    default {
+     	/* STATEMENT */
+    };
 };

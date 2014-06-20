@@ -44,8 +44,9 @@ timer4 = time;
 *****************************
 */
 
-factoryWeaponQueue = []; // [ITEM, FINISH TIME, TIME STARTED]
-factoryExport = [];
+factoryWeaponQueue = [];
+factoryExport = []; //not yet used, it will eventually be used queue the export to the server to be saved until someone pulls it.
+flp_factoryTimeCost = 0.02;
 
 /*
 *****************************

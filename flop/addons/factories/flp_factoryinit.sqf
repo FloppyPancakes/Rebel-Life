@@ -1,3 +1,4 @@
+/* Should no longer be needed. Keep once.
 //ALL asset entries are now USELESS in this file. SUCK IT.
 
 _weaponfactory = [
@@ -173,6 +174,7 @@ flp_factories = [
 	[weaponfactory,"factory1","Weapons Factory","NoLongerUsedAvailable",dummyobj,_weaponfactory,250000,"ReservedForFutureUse", "weaponqueue"]/*,
 	[Vehiclefactory,"factory1","Vehicle Factory",dummyobj,vfacspawn_0,_vehiclefactory,150000,"ReservedForFutureUse", "vehiclequeue"]
 	*/
-];
+//];
 
-flp_queueActive = 0;
+//flp_queueActive = 0;
+//*/

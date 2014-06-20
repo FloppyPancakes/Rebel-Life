@@ -8,7 +8,7 @@
 _func = _this select 0; //0 for Create, 1 for Export;
 _index= _this select 1;
 _item = factoryWeaponQueue select _index;
-//hint format["%1, %2", _func, _index];
+hint format["%1, %2", _func, _item];
 
 switch (_func) do {
 
@@ -22,7 +22,7 @@ switch (_func) do {
 
 					switch (_item select 3) do {
 
-						case 1: //Weapon
+						case "1": //Weapon
 							{
 
 							player addItemToBackpack (_item select 1);
@@ -31,7 +31,7 @@ switch (_func) do {
 							[facnum] execVM "flop\addons\factories\flp_factoryFetchQueue.sqf"
 
 							};
-						case 2:
+						case "2":
 							{
 
 							player addItemToBackpack (_item select 1);
@@ -40,7 +40,7 @@ switch (_func) do {
 							[facnum] execVM "flop\addons\factories\flp_factoryFetchQueue.sqf"
 
 							};
-						case 3:
+						case "3":
 							{
 
 							player addItemToBackpack (_item select 1);

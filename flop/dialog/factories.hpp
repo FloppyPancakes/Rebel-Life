@@ -86,8 +86,13 @@ class RscListbox_1500: RscListbox
 	y = 9 * GUI_GRID_H + GUI_GRID_Y;
 	w = 19.5 * GUI_GRID_W;
 	h = 11.5 * GUI_GRID_H;
-	sizeEx = .80 * GUI_GRID_H;
+	sizeEx = .70 * GUI_GRID_H;
 	//colorBackground[] = {0,0.43,0.93,0.3};
+	type = CT_LISTNBOX;
+	drawSideArrows = 1;
+	idcLeft = -1;
+ 	idcRight = -1;
+	columns[] = {0.01,0.7};
 };
 class RscButton_1603: RscButton
 {
@@ -127,7 +132,7 @@ class RscButton_1605: RscButton
 class RscButton_1606: RscButton
 {
 	idc = 1606;
-	onButtonClick = "closeDialog 0;";
+	onButtonClick = "closeDialog 0; flp_selectedInfo = nil;";
 	x = 32 * GUI_GRID_W + GUI_GRID_X;
 	y = 18 * GUI_GRID_H + GUI_GRID_Y;
 	w = 4.5 * GUI_GRID_W;

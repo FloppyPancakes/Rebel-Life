@@ -17,15 +17,21 @@ switch (_factoryQueue) do {
 			for [{_x=0},{_x < count factoryWeaponQueue},{_x=_x+1}] do {
 				_item = factoryWeaponQueue select _x;
 				if (_item select 2 < time) then {
-					_time = format["Ready. - $%1", _item select 4];
+					_time = format["Ready - Export for $%1", _item select 4];
 					_index = lbAdd [1500, format["%1 - %2", _item select 0, _time]];
+					lbAdd [1500, ""];
 					lbSetColor [1500, _index, [0, 1, 0, 1]];
 					lbSetData [1500, _index, _x];
 				} else {
-					_time = format["%1 Minutes Remaining", floor ((((_item select 2) - time)+60)/60)];
+
+					_time = ((((_item select 2) - time)+60)/60);
+					_time = format["%1 Minutes Remaining", floor _time];
 					_index = lbAdd [1500, format["%1 - %2", _item select 0, _time]];
+					lbAdd [1500, ""];
 					lbSetData [1500, _index, _x];
 				};
 			};
 		};
 	};
+
+sleep 0.05;

@@ -42,6 +42,29 @@ flp_fetchPlayerVirtItems =
 } foreach life_inv_items;
 };
 
+flp_adjustValue = {
+
+		_qty = call compile (_this select 0);
+		_price = call compile (_this select 1);
+		diag_log format ["Instock: %1 - N.Price: %2", _qty, _price];
+
+	    if (_qty < marketLow) then {
+	    	_desc = marketLow - _qty;
+			_frac = _desc / 100;
+			_mult = _frac * marketMultiplier;
+			hint format ["%1", _mult];
+			_price = floor (_price * _mult);
+	    };
+
+	    if (_qty > marketHigh) then {
+	    	_desc = _qty - marketHigh;
+			_frac = _desc / 100;
+			_mult = _frac / marketMultiplier;
+			_price = floor (_price * _mult);
+	    };
+	     _price;
+};
+
 flp_fetchMenuVirtItems =
 	{
 		_i = 0 ;
@@ -59,7 +82,7 @@ flp_fetchMenuVirtItems =
 
 				//hint format ["Selected Array: %1", flp_fetchedNSortedItems];
 				lbSetData [1500, _i, _items select 1];
-				diag_log _x;
+				//diag_log _x select 0;
 				_i = _i + 1;
 			};
 		} forEach (missionNameSpace getVariable "flp_grocery");
