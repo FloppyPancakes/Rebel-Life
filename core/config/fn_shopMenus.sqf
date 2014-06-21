@@ -1,7 +1,7 @@
 /*
 	File: fn_shopMenus.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Master config for a thing that will be gone eventually..
 */
@@ -20,18 +20,18 @@ switch (_shop) do
 {
 	case "reb":
 	{
-		ctrlSetText[2505,"Sratis Rebel Shop"];
+		ctrlSetText[2505,"Sratis Rebel Shop"]; //FLOPPY -- WUT!!!!????!?
 		ctrlShow[2503,false];
 		ctrlShow[2513,false];
 		ctrlShow[2514,false];
 	};
-	
+
 	case "cop":
 	{
 		ctrlSetText[2505,"Altis Cop Shop"];
 		ctrlShow[2503,false];
 	};
-	
+
 	case "gun":
 	{
 		ctrlSetText[2505,"Altis Gun Store"];
@@ -39,7 +39,7 @@ switch (_shop) do
 		ctrlShow[2513,false];
 		ctrlShow[2514,false];
 	};
-	
+
 	case "gang":
 	{
 		ctrlSetText[2505,"Gang Shop"];
@@ -47,7 +47,7 @@ switch (_shop) do
 		ctrlShow[2513,false];
 		ctrlShow[2514,false];
 	};
-	
+
 	case "dive":
 	{
 		ctrlSetText[2505,"Altis Diving Shop"];
@@ -56,30 +56,30 @@ switch (_shop) do
 		ctrlShow[2511,false];
 		ctrlShow[2513,false];
 	};
-	
+
 	case "donator":
 	{
 		ctrlSetText[2505,"Donator Shop"];
 	};
-	
+
 	case "sergeant":
 	{
 		ctrlSetText[2505,"Sergeants Shop"];
 		ctrlShow[2503,false];
 	};
-	
+
 	case "gen":
 	{
 		ctrlSetText[2505,"Altis General Store"];
 		ctrlShow[2503,false];
 	};
-	
+
 	case "officer":
 	{
 		ctrlSetText[2505,"Patrol Officer Shop"];
 		ctrlShow[2503,false];
 	};
-	
+
 	case "admin":
 	{
 		ctrlSetText[2505,"Admin Shop"];

@@ -158,7 +158,8 @@ life_inv_items =
 "life_inv_CamoNet_BLUFOR_Curator_F",
 "life_inv_CamoNet_BLUFOR_big_Curator_F",
 "life_inv_BarGate_F",
-"life_breaching_charge"
+"life_breaching_charge",
+"life_inv_scrapmetal"
 ];
 
 //Setup variable inv vars.

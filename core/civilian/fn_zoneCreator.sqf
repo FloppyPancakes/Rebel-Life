@@ -1,13 +1,13 @@
 /*
 	File: fn_zoneCreator.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Creates triggers around the map to add the addAction for specific
 	fields such as apples, cocaine, heroin, etc. This method is to reduce
 	CPU load.
-	
-	Note: 
+
+	Note:
 	Triggers are NOT my preferred method so this is considered temporary until a more suitable
 	option is presented.
 */

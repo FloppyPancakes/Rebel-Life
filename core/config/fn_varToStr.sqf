@@ -56,6 +56,7 @@ switch (_var) do
 	case "life_inv_rock": {"Rock"};
 	case "life_inv_cement": {"Cement Bag"};
 	case "life_inv_goldbar": {"Gold Bar"};
+	case "life_inv_scrapmetal": {"Scrap Metal"};
 
 	//Flop Storage, Not yet working.
 	case "life_inv_storage1": {"Small Storage"};

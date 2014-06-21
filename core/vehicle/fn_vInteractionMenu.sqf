@@ -1,7 +1,7 @@
 /*
 	File: fn_vInteractionMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Replaces the mass addactions for various vehicle actions
 */
@@ -37,14 +37,14 @@ if("ToolKit" in (items player)) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEn
 if(playerSide == west) then {
 	_Btn2 ctrlSetText localize "STR_vInAct_Registration";
 	_Btn2 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_searchVehAction;";
-	
+
 	_Btn3 ctrlSetText localize "STR_vInAct_SearchVehicle";
 	_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_vehInvSearch;";
-	
+
 	_Btn4 ctrlSetText localize "STR_vInAct_PullOut";
 	_Btn4 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_pulloutAction;";
 	if(count crew _curTarget == 0) then {_Btn4 ctrlEnable false;};
-	
+
 	_Btn5 ctrlSetText localize "STR_vInAct_Impound";
 	_Btn5 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_impoundAction;";
 } else {
@@ -52,4 +52,14 @@ if(playerSide == west) then {
 	_Btn3 ctrlShow false;
 	_Btn4 ctrlShow false;
 	_Btn5 ctrlShow False;
+};
+
+//////BELOW ADDED BY FLOPPY
+if ((getDammage cursorTarget) == 1) then {
+
+	_Btn2 ctrlShow true;
+	_Btn2 ctrlSetText "Salvage Vehicle";
+	//_Btn2 buttonSetAction "[life_vInact_curTarget] spawn flp_salvageVehicle;";
+	_Btn2 buttonSetAction "[life_vInact_curTarget] execVM ""flop\Scripts\flp_salvageVehicle.sqf"";";
+
 };

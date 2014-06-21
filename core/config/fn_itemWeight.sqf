@@ -1,7 +1,7 @@
 /*
 	File: fn_itemWeight.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Gets the items weight and returns it.
 */
@@ -71,5 +71,6 @@ case "camocur": {50};
 case "camobcur": {50};
 case "barg": {50};
 case "bcharge": {5};
+case "scrapmetal": {5};
 	default {1};
 };

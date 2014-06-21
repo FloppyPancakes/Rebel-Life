@@ -1,7 +1,7 @@
 /*
 	File: fn_varHandle.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Master handler for getting a variables name, short name, etc.
 */
@@ -80,9 +80,10 @@ case "camocur": {"life_inv_CamoNet_BLUFOR_Curator_F"};
 case "camobcur": {"life_inv_CamoNet_BLUFOR_big_Curator_F"};
 case "barg": {"life_inv_BarGate_F"};
 case "bcharge": {"life_breaching_charge"};
+case "scrapmetal": {"life_inv_scrapmetal"};
 		};
 	};
-	
+
 	case 1:
 	{
 		switch (_var) do
@@ -151,6 +152,7 @@ case "life_inv_CamoNet_BLUFOR_Curator_F": {"camocur"};
 case "life_inv_CamoNet_BLUFOR_big_Curator_F": {"camobcur"};
 case "life_inv_BarGate_F": {"barg"};
 case "life_breaching_charge": {"bcharge"};
+case "life_inv_scrapmetal": {"scrapmetal"};
 		};
 	};
 };

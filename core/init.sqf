@@ -41,12 +41,19 @@ switch (playerSide) do
 		_handle = [] spawn life_fnc_initCop;
 		waitUntil {scriptDone _handle};
 	};
-	
+
 	case civilian:
 	{
 		//Initialize Civilian Settings
 		_handle = [] spawn life_fnc_initCiv;
 		waitUntil {scriptDone _handle};
+	};
+
+	case sideLogic:
+	{
+		_handle = [] spawn life_fnc_initZeus;
+
+        waitUntil {scriptDone _handle};
 	};
 };
 
