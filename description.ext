@@ -1,6 +1,6 @@
-author = "TAW_Tonic";
-onLoadName = "Altis Life RPG v3.1.2";
-onLoadMission = "A RPG game mode developed by TAW_Tonic";
+author = "";
+onLoadName = "Rebel Life Life RPG v3.1.2";
+onLoadMission = "Developed by TAW_Tonic, Modified by Real Men of Genius";
 joinUnassigned = 1;
 respawn = BASE;
 respawndelay = 10;

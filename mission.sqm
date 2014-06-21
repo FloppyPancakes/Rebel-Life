@@ -347,7 +347,7 @@ class Mission
 					id=18;
 					side="WEST";
 					vehicle="B_medic_F";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					skill=0.60000002;
 					text="cop_1";
 					init="removeBackpack this; removeAllWeapons this;";
@@ -1909,6 +1909,7 @@ class Mission
 					id=89;
 					side="CIV";
 					vehicle="C_man_1_3_F";
+					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 					text="civ_75";
@@ -1952,7 +1953,7 @@ class Mission
 					id=91;
 					side="CIV";
 					vehicle="C_man_1_3_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 					text="civ_73";
@@ -2097,14 +2098,14 @@ class Mission
 				class Item3
 				{
 					position[]={14041.784,24.323896,18788.602};
-					azimut=-174.51979;
+					azimut=-174.52;
 					offsetY=0.5;
 					special="NONE";
 					id=99;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction[""Market"",life_fnc_virt_menu,""market""];";
+					init="this allowDamage false; this enableSimulation false;  this addAction[""Market"",{[""market""] execVM ""flop\core\shops\flp_virtMenu.sqf""}];";
 				};
 				class Item4
 				{
@@ -2213,14 +2214,14 @@ class Mission
 				class Item13
 				{
 					position[]={9085.7109,20.741068,12040.046};
-					azimut=-174.51979;
+					azimut=-174.52;
 					offsetY=0.60000002;
 					special="NONE";
 					id=109;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction[""Market"",life_fnc_virt_menu,""market""];";
+					init="this allowDamage false; this enableSimulation false;  this addAction[""Market"",{[""market""] execVM ""flop\core\shops\flp_virtMenu.sqf""}];";
 				};
 				class Item14
 				{
@@ -2375,7 +2376,7 @@ class Mission
 				class Item27
 				{
 					position[]={3273.8301,2.199379,12976.014};
-					azimut=182.05424;
+					azimut=182.054;
 					offsetY=0.2;
 					special="NONE";
 					id=123;
@@ -2383,7 +2384,7 @@ class Mission
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
 					text="h1_3";
-					init="this enableSimulation false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""];  this allowDamage false;  this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""];  this addAction[""Cop Weapon Shop"",life_fnc_weaponShopMenu,""cop_basic""];  this addAction[""Patrol Officer Weapon Shop"",life_fnc_weaponShopMenu,""cop_patrol""];  this addAction[""Sergeant Weapon Shop"",life_fnc_weaponShopMenu,""cop_sergeant""]; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];";
+					init="this enableSimulation false; this addAction[""Cop Item Shop"",{[""cop""] execVM ""flop\core\shops\flp_virtMenu.sqf""}];  this allowDamage false;  this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""];  this addAction[""Cop Weapon Shop"",life_fnc_weaponShopMenu,""cop_basic""];  this addAction[""Patrol Officer Weapon Shop"",life_fnc_weaponShopMenu,""cop_patrol""];  this addAction[""Sergeant Weapon Shop"",life_fnc_weaponShopMenu,""cop_sergeant""]; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];";
 				};
 				class Item28
 				{
@@ -2400,13 +2401,13 @@ class Mission
 				class Item29
 				{
 					position[]={15181.577,17.899151,17312.213};
-					azimut=-188.17375;
+					azimut=-188.174;
 					special="NONE";
 					id=125;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
-					init="removeallWeapons this; this enableSimulation false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""]; this allowDamage false;  this addAction[""Helicopter Shop"",life_fnc_vehicleShop,""cop_air_2""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_air_2"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="removeallWeapons this; this enableSimulation false; this allowDamage false; this addAction[""Cop Item Shop"",{[""cop""] execVM ""flop\core\shops\flp_virtMenu.sqf""}]; this allowDamage false;  this addAction[""Helicopter Shop"",life_fnc_vehicleShop,""cop_air_2""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_air_2"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item30
 				{
@@ -2560,26 +2561,26 @@ class Mission
 				class Item43
 				{
 					position[]={16566.236,11,12747.126};
-					azimut=197.21324;
+					azimut=197.213;
 					special="NONE";
 					id=139;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
 					text="h1_3_1";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""]; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];  this allowDamage false;  this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""];  this addAction[""Cop Weapon Shop"",life_fnc_weaponShopMenu,""cop_basic""];  this addAction[""Patrol Officer Weapon Shop"",life_fnc_weaponShopMenu,""cop_patrol""];  this addAction[""Sergeant Weapon Shop"",life_fnc_weaponShopMenu,""cop_sergeant""]; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Cop Item Shop"",{[""cop""] execVM ""flop\core\shops\flp_virtMenu.sqf""}];  this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];  this allowDamage false;  this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""];  this addAction[""Cop Weapon Shop"",life_fnc_weaponShopMenu,""cop_basic""];  this addAction[""Patrol Officer Weapon Shop"",life_fnc_weaponShopMenu,""cop_patrol""];  this addAction[""Sergeant Weapon Shop"",life_fnc_weaponShopMenu,""cop_sergeant""]; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west '];";
 				};
 				class Item44
 				{
 					position[]={13822.735,20.48065,18986.611};
-					azimut=182.05424;
+					azimut=182.054;
 					special="NONE";
 					id=140;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
 					text="h1_3_2";
-					init="this enableSimulation false;   this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""]; this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""];  this addAction[""Cop Weapon Shop"",life_fnc_weaponShopMenu,""cop_basic""];  this addAction[""Patrol Officer Weapon Shop"",life_fnc_weaponShopMenu,""cop_patrol""];  this addAction[""Sergeant Weapon Shop"",life_fnc_weaponShopMenu,""cop_sergeant""]; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Cop Item Shop"",{[""cop""] execVM ""flop\core\shops\flp_virtMenu.sqf""}]; this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""];  this addAction[""Cop Weapon Shop"",life_fnc_weaponShopMenu,""cop_basic""];  this addAction[""Patrol Officer Weapon Shop"",life_fnc_weaponShopMenu,""cop_patrol""];  this addAction[""Sergeant Weapon Shop"",life_fnc_weaponShopMenu,""cop_sergeant""]; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west '];";
 				};
 				class Item45
 				{
@@ -2719,14 +2720,14 @@ class Mission
 				class Item57
 				{
 					position[]={20769.969,36.844448,16667.563};
-					azimut=126.01169;
+					azimut=126.012;
 					special="NONE";
 					id=153;
 					side="WEST";
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
 					text="h1_3_3";
-					init="this enableSimulation false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""];  this allowDamage false;  this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""];  this addAction[""Cop Weapon Shop"",life_fnc_weaponShopMenu,""cop_basic""];  this addAction[""Patrol Officer Weapon Shop"",life_fnc_weaponShopMenu,""cop_patrol""];  this addAction[""Sergeant Weapon Shop"",life_fnc_weaponShopMenu,""cop_sergeant""]; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Cop Item Shop"",{[""cop""] execVM ""flop\core\shops\flp_virtMenu.sqf""}];   this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""];  this addAction[""Cop Weapon Shop"",life_fnc_weaponShopMenu,""cop_basic""];  this addAction[""Patrol Officer Weapon Shop"",life_fnc_weaponShopMenu,""cop_patrol""];  this addAction[""Sergeant Weapon Shop"",life_fnc_weaponShopMenu,""cop_sergeant""]; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west '];";
 				};
 				class Item58
 				{
@@ -2913,14 +2914,14 @@ class Mission
 				class Item74
 				{
 					position[]={25711.877,20.665394,21390.844};
-					azimut=-178.40675;
+					azimut=-178.407;
 					special="NONE";
 					id=170;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					skill=0.60000002;
 					text="reb_1_4";
-					init="removeallWeapons this;    this enableSimulation false;    this allowDamage false;    this addAction[""Rebel Clothing Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];    this addAction[""Rebel Weapon Shop"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];  this addAction[""Rebel Market"",life_fnc_virt_menu,""rmarket"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];    this addAction[format[""%1 ($%2)"",[""license_civ_rebel""] call life_fnc_varToStr,[([""rebel""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,false,false,"""",' !license_civ_rebel && playerSide == civilian '];   this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
+					init=" removeallWeapons this;       this enableSimulation false;       this allowDamage false;       this addAction[""Rebel Clothing Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];       this addAction[""Rebel Weapon Shop"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];     this addAction[""Rebel Market"",{[""rmarket""] execVM ""flop\core\shops\flp_virtMenu.sqf""},"""",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];       this addAction[format[""%1 ($%2)"",[""license_civ_rebel""] call life_fnc_varToStr,[([""rebel""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,false,false,"""",' !license_civ_rebel && playerSide == civilian '];      this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
 				};
 			};
 		};
@@ -2953,7 +2954,7 @@ class Mission
 				class Item0
 				{
 					position[]={17016.197,15.943213,12629.298};
-					azimut=-46.62635;
+					azimut=-46.6264;
 					offsetY=0.60000002;
 					special="NONE";
 					id=172;
@@ -2961,7 +2962,7 @@ class Mission
 					vehicle="C_man_1";
 					leader=1;
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction[""Market"",life_fnc_virt_menu,""market""];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Market"",{[""market""] execVM ""flop\core\shops\flp_virtMenu.sqf""}];";
 				};
 			};
 		};

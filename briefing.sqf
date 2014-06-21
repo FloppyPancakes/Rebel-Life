@@ -35,6 +35,8 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Custom Change Log",
 				"
+					v3.3.1: Added Orbiting Cameras for your Spawn Selection, and Implemented a new Virtual Inventory Store UI. <br/>
+					v3.3.0: Live Market Completely Implemented and Functioning. All items will change in price based on supply and demand. <br/>
 					v3.2.9: Factories nearly complete. One factory free to use is in Kavala square for testing. Please feel free to find bugs!<br/>
 					v3.2.8: Texting Individuals or Police will no longer work if you do not have a radio equipped.<br/>
 					v3.2.7: Cops will no longer show up on map to other cops, if they do not have a GPS.<br/>

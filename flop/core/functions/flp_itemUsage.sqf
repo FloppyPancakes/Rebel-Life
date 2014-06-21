@@ -28,6 +28,7 @@ if(_item == "") exitWith {};
 		case "life_inv_redgull": {_item = "Adds 100 to your Hydration. Allows you to sprint for 3 minutes."};
 		case "life_inv_pickaxe": {_item = "Facilitates in mining."};
 		case "life_inv_fuelF": {_item = "Adds Fuel to a Vehicle."};
+		case "life_inv_spikestrip": {_item = "A deployable Spike Strip used to immobilize vehicles."};
 		default {_item = ""};
 };
 

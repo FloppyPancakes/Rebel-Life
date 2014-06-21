@@ -11,7 +11,7 @@
 //The buy column will list Price, and a Short Desc. Desc will give info on what it does, or what it is used in.
 //On the Sell Colum, it will simply list the sell price, which will be 75% of the current buy price.
 
-flp_selectedShop = "market";
+flp_selectedShop = _this select 0;
 flp_selectedShop = [flp_selectedShop] call life_fnc_virt_shops;
 
 //hint format ["%1", _shop];
