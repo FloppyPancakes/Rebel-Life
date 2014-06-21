@@ -1,5 +1,5 @@
-author = "";
-onLoadName = "Rebel Life Life RPG v3.1.2";
+author = "TAW_Tonic & Real Men of Genius";
+onLoadName = "Rebel Life RPG v3.1.2";
 onLoadMission = "Developed by TAW_Tonic, Modified by Real Men of Genius";
 joinUnassigned = 1;
 respawn = BASE;
@@ -24,13 +24,10 @@ corpseRemovalMaxTime = 5;
 
 #include "dialog\MasterHandler.h"
 #include "VAS\menu.hpp"
-//#include "flop\addons\factories\RscDefines.hpp"
 #include "flop\defines.hpp"
 #include "flop\dialog\factories.hpp"
 #include "flop\dialog\flp_market.hpp"
 #include "flop\dialog\flp_virtShop.hpp"
-//#include "flop\dialog\flp_spawnSelection.hpp"
-//#include "flop\addons\factories\RscMenuFactoryManufacture.hpp"
 
 class RscTitles
 {
