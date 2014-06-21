@@ -11,7 +11,7 @@
 //The buy column will list Price, and a Short Desc. Desc will give info on what it does, or what it is used in.
 //On the Sell Colum, it will simply list the sell price, which will be 75% of the current buy price.
 
-flp_selectedShop = _this select 0;
+flp_selectedShop = "market";
 flp_selectedShop = [flp_selectedShop] call life_fnc_virt_shops;
 
 //hint format ["%1", _shop];
@@ -80,7 +80,7 @@ flp_adjustValue = {
 flp_fetchMenuVirtItems =
 	{
 
-		private ["_i"];
+		private ["_i","_lifeName"];
 		_i = 0 ;
 		lbClear 1500;
 		flp_fetchedNSortedItems = [];
@@ -104,7 +104,7 @@ flp_fetchMenuVirtItems =
 		{
 			_lifeName = [_x select 0, 1] call life_fnc_varHandle;
 
-			if (((_x select 0) != "") AND (_lifeName in (flp_selectedShop select 1))) then {
+			if (_lifeName in (flp_selectedShop select 1)) then {
 
 				_adjustPrice = [_x select 1, _x select 3] call flp_adjustValue;
 
