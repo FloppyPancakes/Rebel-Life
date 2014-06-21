@@ -1,7 +1,7 @@
 /*
 	File: fn_virt_shops.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Config for virtual shops.
 */

@@ -11,12 +11,17 @@
 //The buy column will list Price, and a Short Desc. Desc will give info on what it does, or what it is used in.
 //On the Sell Colum, it will simply list the sell price, which will be 75% of the current buy price.
 
+flp_selectedShop = _this select 0;
+flp_selectedShop = [flp_selectedShop] call life_fnc_virt_shops;
+
+//hint format ["%1", _shop];
 disableSerialization;
 
 createDialog "flp_virtShops";
 
-ctrlSetText[1000, "Market"];
+ctrlSetText[1000, flp_selectedShop select 0];
 ctrlSetText[1600, "Rob"];
+	ctrlShow [1600, false];
 ctrlSetText[1601, "Close"];
 ctrlSetText[1602, "Buy"];
 ctrlSetText[1603, "Sell"];
@@ -46,46 +51,73 @@ flp_adjustValue = {
 
 		_qty = call compile (_this select 0);
 		_price = call compile (_this select 1);
-		diag_log format ["Instock: %1 - N.Price: %2", _qty, _price];
+		_oldprice = call compile (_this select 1);
 
 	    if (_qty < marketLow) then {
 	    	_desc = marketLow - _qty;
 			_frac = _desc / 100;
 			_mult = _frac * marketMultiplier;
-			hint format ["%1", _mult];
 			_price = floor (_price * _mult);
+			if (_oldprice > _price) then {
+				_price = _oldprice;
+			}
 	    };
 
 	    if (_qty > marketHigh) then {
 	    	_desc = _qty - marketHigh;
 			_frac = _desc / 100;
 			_mult = _frac / marketMultiplier;
+			_mult = _mult / 10;
 			_price = floor (_price * _mult);
+	    };
+
+	    if (_price < 5) then {
+	    	_price = 5;
 	    };
 	     _price;
 };
 
 flp_fetchMenuVirtItems =
 	{
+
+		private ["_i"];
 		_i = 0 ;
 		lbClear 1500;
 		flp_fetchedNSortedItems = [];
 		{
-			if((_x select 2) == '0') then {
+			_lifeName = [_x select 0, 1] call life_fnc_varHandle;
+			if (_lifeName in (flp_selectedShop select 1)) then {
 
 				_adjustPrice = [_x select 1, _x select 3] call flp_adjustValue;
 
 				lbAdd [1500, format ["$%1", _adjustPrice]];
 				lbAdd [1500, [_x select 0] call life_fnc_varToStr];
+
 				_items = [str _i, _x select 0, _x select 1, str _adjustPrice];
 				flp_fetchedNSortedItems = flp_fetchedNSortedItems + [_items];
 
-				//hint format ["Selected Array: %1", flp_fetchedNSortedItems];
 				lbSetData [1500, _i, _items select 1];
-				//diag_log _x select 0;
 				_i = _i + 1;
 			};
 		} forEach (missionNameSpace getVariable "flp_grocery");
+
+		{
+			_lifeName = [_x select 0, 1] call life_fnc_varHandle;
+
+			if (((_x select 0) != "") AND (_lifeName in (flp_selectedShop select 1))) then {
+
+				_adjustPrice = [_x select 1, _x select 3] call flp_adjustValue;
+
+				lbAdd [1500, format ["$%1", _adjustPrice]];
+				lbAdd [1500, [_x select 0] call life_fnc_varToStr];
+
+				_items = [str _i, _x select 0, _x select 1, str _adjustPrice];
+				flp_fetchedNSortedItems = flp_fetchedNSortedItems + [_items];
+
+				lbSetData [1500, _i, _items select 1];
+				_i = _i + 1;
+			};
+		} forEach (missionNameSpace getVariable "flp_items");
 	};
 
 call flp_fetchMenuVirtItems;

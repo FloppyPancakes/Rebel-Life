@@ -2902,14 +2902,14 @@ class Mission
 				class Item73
 				{
 					position[]={3685.0068,10.503454,13099.33};
-					azimut=268.13852;
+					azimut=268.13901;
 					offsetY=0.029999999;
 					special="NONE";
 					id=169;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction[""Market"",life_fnc_virt_menu,""market""];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Market"",{[""market""] execVM ""flop\core\shops\flp_virtMenu.sqf""}];";
 				};
 				class Item74
 				{
@@ -11030,26 +11030,26 @@ class Mission
 		};
 		class Item176
 		{
-			position[]={27659.307,-0.20279874,15161.217};
+			position[]={26649.459,0.13149853,15161.217};
 			name="Border_1";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
 			fillName="DiagGrid";
 			a=100;
-			b=5000;
+			b=4000;
 			angle=90;
 		};
 		class Item177
 		{
-			position[]={18489.811,-0.10493003,25256.543};
+			position[]={18505.896,-0.31597295,24162.076};
 			name="Border_1_1";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
 			fillName="DiagGrid";
 			a=100;
-			b=7000;
+			b=6000;
 			angle=180;
 		};
 		class Item178
@@ -11205,9 +11205,9 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={27647.646,0.081645489,15161.172};
+			position[]={26652.16,0.12990054,15161.339};
 			a=100;
-			b=5000;
+			b=4000;
 			angle=90;
 			rectangular=1;
 			activationBy="ANY";
@@ -11222,9 +11222,9 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={18494.273,-0.048408285,25185.893};
+			position[]={18505.125,-0.51251221,24136.545};
 			a=100;
-			b=7000;
+			b=6000;
 			rectangular=1;
 			activationBy="ANY";
 			repeating=1;

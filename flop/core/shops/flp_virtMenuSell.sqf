@@ -16,9 +16,7 @@
 			_arrayID = parseNumber(_x select 0);
 			_qty = parseNumber(_x select 2);
 			_price = parseNumber(_x select 3);
-			hint format ["%1", _arrayID];
 		};
-		hint format ["%1", _name];
 	} forEach flp_fetchedNSortedItems;
 
 	_life_name = [_life_name,1] call life_fnc_varHandle;

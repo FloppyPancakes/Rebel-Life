@@ -26,6 +26,8 @@ if(_item == "") exitWith {};
 		case "life_inv_peach": {_item = "Adds 10 to your Food."};
 		case "life_inv_water": {_item = "Adds 100 to your Hydration."};
 		case "life_inv_redgull": {_item = "Adds 100 to your Hydration. Allows you to sprint for 3 minutes."};
+		case "life_inv_pickaxe": {_item = "Facilitates in mining."};
+		case "life_inv_fuelF": {_item = "Adds Fuel to a Vehicle."};
 		default {_item = ""};
 };
 
