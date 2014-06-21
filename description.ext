@@ -29,6 +29,7 @@ corpseRemovalMaxTime = 5;
 #include "flop\dialog\factories.hpp"
 #include "flop\dialog\flp_market.hpp"
 #include "flop\dialog\flp_virtShop.hpp"
+//#include "flop\dialog\flp_spawnSelection.hpp"
 //#include "flop\addons\factories\RscMenuFactoryManufacture.hpp"
 
 class RscTitles
