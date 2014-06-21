@@ -159,7 +159,9 @@ life_inv_items =
 "life_inv_CamoNet_BLUFOR_big_Curator_F",
 "life_inv_BarGate_F",
 "life_breaching_charge",
-"life_inv_scrapmetal"
+"life_inv_scrapmetal",
+"life_inv_metal_ore",
+"life_inv_metal_bar"
 ];
 
 //Setup variable inv vars.
@@ -187,7 +189,8 @@ life_licenses =
 	["license_civ_iron","civ"],
 	["license_civ_sand","civ"],
 	["license_civ_salt","civ"],
-	["license_civ_cement","civ"]
+	["license_civ_cement","civ"],
+	["license_civ_ore_refinement","civ"]
 ];
 
 //Setup License Variables

@@ -23,5 +23,11 @@ switch (playerSide) do
 		//Destroy Radio
 		life_actions = life_actions + [player addAction["Destroy Radio","flop\Scripts\flp_destroyRadio.sqf","",0,false,false,"",'
 		!isNull cursorTarget && player distance cursorTarget < 3.5 && isPlayer cursorTarget && animationState cursorTarget == "Incapacitated" ']];
+
+		//Gather Ores
+		/*
+		life_actions = life_actions + [player addAction["Gather Ore",life_fnc_gatherAction,["metalore",1],0,false,false,"",'
+		!life_action_in_use && (player distance (getMarkerPos "ore_1") < 150) && (vehicle player == player) && (life_carryWeight + (["metalore"] call life_fnc_itemWeight)) <= life_maxWeight ']];
+		*/
 	};
 };

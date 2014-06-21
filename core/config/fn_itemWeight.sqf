@@ -72,5 +72,7 @@ case "camobcur": {50};
 case "barg": {50};
 case "bcharge": {5};
 case "scrapmetal": {5};
+case "metalbar": {3};
+case "metalore": {3};
 	default {1};
 };

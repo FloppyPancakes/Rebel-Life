@@ -1,7 +1,7 @@
 /*
 	File: fn_licensePrice.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Returns the license price.
 */
@@ -33,5 +33,5 @@ switch (_type) do
 	case "iron": {9500};
 	case "copper": {8000};
 	case "cement": {6500};
-	case "meth": {100000};
+	case "ore": {12500};
 };

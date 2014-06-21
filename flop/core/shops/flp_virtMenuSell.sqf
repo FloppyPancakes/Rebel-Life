@@ -21,6 +21,7 @@
 
 	_life_name = [_life_name,1] call life_fnc_varHandle;
 	[false,_life_name,_amt] call life_fnc_handleInv;
+	_price = _price * _amt;
 	_price = floor(_price * .75);
 	life_cash = life_cash + _price;
 

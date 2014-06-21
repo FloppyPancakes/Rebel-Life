@@ -81,6 +81,8 @@ case "camobcur": {"life_inv_CamoNet_BLUFOR_big_Curator_F"};
 case "barg": {"life_inv_BarGate_F"};
 case "bcharge": {"life_breaching_charge"};
 case "scrapmetal": {"life_inv_scrapmetal"};
+case "metalore": {"life_inv_metal_ore"};
+case "metalbar": {"life_inv_metal_bar"};
 		};
 	};
 
@@ -153,6 +155,8 @@ case "life_inv_CamoNet_BLUFOR_big_Curator_F": {"camobcur"};
 case "life_inv_BarGate_F": {"barg"};
 case "life_breaching_charge": {"bcharge"};
 case "life_inv_scrapmetal": {"scrapmetal"};
+case "life_inv_metal_ore": {"metalore"};
+case "life_inv_metal_bar": {"metalbar"};
 		};
 	};
 };

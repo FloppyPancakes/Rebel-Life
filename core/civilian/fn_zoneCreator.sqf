@@ -11,13 +11,14 @@
 	Triggers are NOT my preferred method so this is considered temporary until a more suitable
 	option is presented.
 */
-private["_appleZones","_peachZones","_heroinZones","_cocaineZones","_weedZones","_workplacezones"];
+private["_appleZones","_peachZones","_heroinZones","_cocaineZones","_weedZones","_workplacezones","_oreplaces"];
 _appleZones = ["apple_1","apple_2","apple_3","apple_4"];
 _peachZones = ["peaches_1","peaches_2","peaches_3","peaches_4"];
 _heroinZones = ["heroin_1"];
 _cocaineZones = ["cocaine_1"];
 _weedZones = ["weed_1"];
 _workplacezones = ["workplace_1","workplace_2","workplace_3","workplace_4"];
+_oreplaces = ["ore_1"];
 
 //Create apple zones
 {
@@ -66,3 +67,11 @@ _workplacezones = ["workplace_1","workplace_2","workplace_3","workplace_4"];
 	_zone setTriggerActivation["CIV","PRESENT",true];
 	_zone setTriggerStatements["player in thislist","LIFE_Action_Hook = player addAction['Get Hookin!','flop\actions\hook.sqf'];","player removeAction LIFE_Action_Hook;"];
 } foreach _workplacezones;
+
+//Workplaces
+{
+	_zone = createTrigger ["EmptyDetector",(getMarkerPos _x)];
+	_zone setTriggerArea[30,30,0,false];
+	_zone setTriggerActivation["CIV","PRESENT",true];
+	_zone setTriggerStatements["player in thislist","LIFE_Action_Ore = player addAction['Gather Ore',life_fnc_gatherAction, ['metalore',1]];","player removeAction LIFE_Action_Ore;"];
+} foreach _oreplaces;

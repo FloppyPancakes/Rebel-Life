@@ -57,6 +57,8 @@ switch (_var) do
 	case "life_inv_cement": {"Cement Bag"};
 	case "life_inv_goldbar": {"Gold Bar"};
 	case "life_inv_scrapmetal": {"Scrap Metal"};
+	case "life_inv_metal_ore": {"Metal Ore"};
+	case "life_inv_metal_bar": {"Metal Bar"};
 
 	//Flop Storage, Not yet working.
 	case "life_inv_storage1": {"Small Storage"};
@@ -104,4 +106,5 @@ switch (_var) do
 	case "license_civ_coke": {"Cocaine Training"};
 	case "license_civ_marijuana": {"Marijuana Training"};
 	case "license_civ_cement": {"Cement Mixing License"};
+	case "license_civ_ore_refinement": {"Ore Refinement License"}
 };

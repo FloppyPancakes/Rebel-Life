@@ -589,3 +589,20 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
+
+
+
+/*
+	player createDiaryRecord ["history",
+		[
+			"",
+				"
+				After many years of war for the Greek Island of Alits, Peace finally came upon the land. Cities in turmoil, families broken, and bankrupt companies and governments, now struggling to get back on their feet. The new government of Alits brought wealth into the lands. They ceased all imports, and began only exporting goods to bring wealth back to their land.<br/>
+				The wealth and peace did not last for long though, as many wealthy families from forgeign countries began moving to the now peaceful land of Altis. The results were very appealing at first, but many of these families brought questionable ideals with them. Many of them did not like the Ore Mines, saying that it was polluting our atmosphere, or claiming that the turtle poaching is inhumane, because they are a rare species.<br/>
+				Time went on.. and eventually the government gave in to their demands. The ore mines were replaced with windmills, almost eliminating their exports. Turtle poaching became illegal.<br/>
+				Citizens starting to ignore laws, and eventually, there was an uprising. A rebel legion soon came about, demanding the old ways of the government, for the sake of their people. There is no law in the Rebel Territory though, and eventually many rebels began to forget what they were fighting for.<br/>
+				And here we are... both the government, and the rebels are each calling for a new leader.. will you be him
+				"
+		]
+	];
+*/
